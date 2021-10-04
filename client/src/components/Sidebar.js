@@ -41,7 +41,7 @@ export default function Sidebar({id}) {
                 <Button onClick={() => setModalOpen(true)} className="rounded-0">
                     New: {conversationsOpen ? "Conversation" : "Contact"}
                 </Button>
-                <Modal show={modalOpen} onHide={closeModal}>
+                <Modal animation={false} show={modalOpen} onHide={closeModal}>
                     {conversationsOpen 
                     ? 
                     <NewConversationModal closeModal={closeModal}/>
