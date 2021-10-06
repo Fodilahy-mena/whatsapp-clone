@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Form, InputGroup, Button } from 'react-bootstrap';
 import { useConversations } from '../contexts/ConversationsProvider';
 
@@ -26,7 +26,7 @@ export default function OpenConversation() {
                     {selectedConversation.messages.map((message, index) => {
                         const lastMessage = selectedConversation.messages.length - 1 === index
                         return (
-                            <div ref={lastMessage ? setRef : null} className={`my-1 d-flex flex-column ${message.fromMe ? 'align-self-end' : ''}`} key={index}>
+                            <div ref={lastMessage ? setRef : null} className={`my-1 d-flex flex-column ${message.fromMe ? 'align-self-end align-items-end' : 'align-items-start'}`} key={index}>
                                 <div className={`rounded px-2 py-1 ${message.fromMe ? 'bg-primary text-white' : 'border'}`}>
                                     {message.text}
                                 </div>
